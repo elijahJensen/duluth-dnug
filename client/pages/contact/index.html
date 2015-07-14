@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Contact Us</h1>
+  
+  <h2>Interested in presenting to our group?</h2>
+  
+  <p> Feel free to contact one of us and let us know what topic you'd like to present, 
+      and we'll add you to the calendar.</p>
+  
+  <ul ng-repeat="contact in contactVm.contacts">
+    <li class="list-item">
+      <p>{{contact.first}} {{contact.last}}</p>
+      <span><a ng-href="mailTo:{{contact.email}}">{{contact.email}}</a></span>
+    </li>
+  </ul>
+  
+    </div>
+  </div>
+</div>

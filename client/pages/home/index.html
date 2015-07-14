@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>The North Shore .Net user group</h1>
+      
+      <p> 
+          was formed to provide a local platform for information sharing among developers in the 
+          Duluth/Superior area.  The group meets the second Thursday of each month to learn about and discuss a wide variety of 
+          topics related to developement.
+      </p>
+       
+      <p> 
+          We are open to discussing any programming language, tool chains, developement patterns, etc. 
+      </p>
+         
+      <p> 
+          If your interested in attending a meeting feel free to come and check it out.  
+          Join our <a>MeetUp</a> group for meeting remiders.
+      </p>
+      
+      <h2>Next Meeting</h2>
+      
+      <div class="home-event">
+        <h4>{{homeVm.event.title}}</h4>
+        <label>Location:</label>
+        <p>{{homeVm.event.location}}</p>
+        <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank"> Map </a> 
+        </br>    
+        <iframe ng-src="{{homeVm.event.locationMapUrl}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </br>
+        <label>Date/Time</label>
+        <p>{{homeVm.event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p>
+        <p>Summary: {{homeVm.event.info}}</p>
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+dist/**
+.sass-cache
+node_modules
+.env
+client/templates.js
+prod.env
