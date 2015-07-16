@@ -8,6 +8,8 @@ gulp.task('watch', ['build'], function() {
   gulp.watch([
     'client/**/*.js',
     'client/**/*.html',
+    'client/**/**/*.js',
+    'client/**/**/*.html',
     'client/content/**/*'
   ], ['webpack', 'content']);
 

@@ -1,0 +1,134 @@
+<div class="container">
+  <div class="row">
+    
+    <h1>Group Organizers</h1>
+    
+    
+    <div class="row">
+      <table class="table table-striped table-bordered table-condensed">
+        <tr>
+          <th>
+            First
+          </th>
+          <th>
+            Last
+          </th>
+           <th>
+            Title
+          </th>
+           <th>
+            Email
+          </th>
+           <th>
+            Delete
+          </th>
+        </tr>
+        <tr ng-repeat="user in organizersVm.users">
+          <th>
+            {{user.firstName}}
+          </th>
+          <th>
+            {{user.lastName}}
+          </th>
+           <th>
+            {{user.title}}
+          </th>
+           <th>
+            {{user.email}}
+          </th>
+           <th>
+            <button class="btn btn-xs btn-danger" ng-click="organizersVm.deleteUser(user)">x</button>
+          </th>
+        </tr>
+      </table>
+    </div>
+    
+    <div ng-show="organizersVm.registerForm.successMessage" class="alert alert-success">
+      <strong>Success!</strong>
+      <p>{{organizersVm.registerForm.successMessage}}</p>
+    </div>
+    
+    <div ng-show="organizersVm.registerForm.failMessage" class="alert alert-warning">
+      <strong>Whoops!</strong>
+      <p>{{organizersVm.registerForm.failMessage}}</p>
+    </div>
+    
+    <form name="form" ng-submit="organizersVm.createAccount()" novalidate>
+    
+      <div class="form-group">
+        <label for="registerFirstName">First Name</label>
+        <input ng-model="organizersVm.registerForm.firstName" 
+          type="text" 
+          class="form-control" 
+          id="registerFirstName" 
+          placeholder="John" 
+          required>
+      </div>
+      
+      <div class="form-group">
+        <label for="registerLastName">Last Name</label>
+        <input ng-model="organizersVm.registerForm.lastName" 
+          type="text" 
+          class="form-control" 
+          id="registerLastName" 
+          placeholder="Doe" 
+          required>
+      </div>
+      
+      <div class="form-group">
+        <label for="registerTitle">Officer Title</label>
+        <input ng-model="organizersVm.registerForm.title" 
+          type="text" 
+          class="form-control" 
+          id="registerTitle" 
+          placeholder="Officer position title" 
+          required>
+      </div>
+    
+      <div class="form-group">
+        <label for="registerEmail">Email</label>
+        <input ng-model="organizersVm.registerForm.email" 
+          type="email" 
+          class="form-control" 
+          id="registerEmail" 
+          placeholder="yourname@arinet.com" 
+          required>
+      </div>
+    
+      <div class="form-group" collapse="!organizersVm.registerForm.email">
+        <label for="registerEmailConfirm">Confirm Email</label>
+        <input ng-model="organizersVm.registerForm.emailConfirm" 
+          type="email" 
+          class="form-control" 
+          id="registerEmailConfirm" 
+          placeholder="validate email" 
+          required>
+      </div>
+    
+      <div class="form-group">
+        <label for="registerPassword">Password</label>
+        <input ng-model="organizersVm.registerForm.pword" 
+          type="password" 
+          class="form-control" 
+          id="registerPassword" 
+          placeholder="password" 
+          required>
+      </div>
+    
+      <div class="form-group" collapse="!organizersVm.registerForm.pword">
+        <label for="registerPasswordConfirm">Confirm Password</label>
+        <input ng-model="organizersVm.registerForm.pwordConfirm" 
+          type="password" 
+          class="form-control" 
+          id="registerPasswordConfirm" 
+          placeholder="confirm password" 
+          required>
+      </div>
+    
+      <div busy-Indicator></div>
+    
+      <button type="submit" class="btn btn-success pull-right" ng-disabled="form.$invalid">Add</button>
+    
+    </form>
+  </div>
+</div>

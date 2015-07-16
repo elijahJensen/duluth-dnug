@@ -1,18 +1,11 @@
-var inject = [];
+var inject = ['AccountService'];
 
-var ContactsController = function(){
+var ContactsController = function(accntService){
 	var vm = this;
 	vm.contacts = [];
 	
 	function init(){
-		vm.contacts.push({first : "Don",
-						  last : "Waldo",
-						  email : "don.g.waldo@gmail.com"						  
-			});
-		vm.contacts.push({first : "James",
-						  last : "Ekstrom",
-						  email : "james.ekstrom@ari.com"	
-		});
+		vm.contacts = accntService.getUsers(); 
 	};
 	
 	init();

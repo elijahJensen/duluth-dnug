@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
       </a>
       <a href class="navbar-brand" ui-sref="app.home">
-        North Shore .NET User Group
+       {{appVm.userGroupName}}
       </a>
     </div>
 
@@ -31,18 +31,22 @@
             Contact
           </a>
         </li>
+        <li ng-if="appVm.isAuthenticated()">
+          <a ui-sref="app.organizers">
+            Manage App Accounts
+          </a>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right" >
          
          <li>
-         <a href ui-sref="app.login" class="login" ng-if="!appCtrl.isAuthenticated()">
-            Log In
-         </a>
-                          
-          <a href ng-click="appCtrl.logOff()" ng-if="appCtrl.isAuthenticated()">
-            Log Out
-          </a>
+           <a href ui-sref="app.login" class="login" ng-if="!appVm.isAuthenticated()">
+              Log In
+           </a>       
+            <a href ng-click="appVm.logOff()" ng-if="appVm.isAuthenticated()">
+              Log Out
+            </a>
           </li>
           
       <ul>

@@ -9,7 +9,7 @@ function RouteConfig(stateProvider, locationProvider, $urlRouterProvider) {
       abstract: true,
       templateUrl: 'pages/app/index.html',
       controller: 'AppController',
-      controllerAs: 'appCtrl'
+      controllerAs: 'appVm'
       // resolve: {
       //   authorize: ['autherizationService',
       //     function(authorization) {
@@ -35,6 +35,12 @@ function RouteConfig(stateProvider, locationProvider, $urlRouterProvider) {
       templateUrl: 'pages/contact/index.html',
       controller: 'ContactController',
       controllerAs: 'contactVm'
+    })
+    .state('app.organizers', {
+      url: '/organizers',
+      templateUrl: 'pages/organizers/index.html',
+      controller: 'OrganizersController',
+      controllerAs: 'organizersVm'
     })
     .state('app.login', {
       url: '/login',

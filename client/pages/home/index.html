@@ -1,36 +1,58 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>The North Shore .Net user group</h1>
+      <h1>{{homeVm.userGroup}}</h1>
       
       <p> 
-          was formed to provide a local platform for information sharing among developers in the 
-          Duluth/Superior area.  The group meets the second Thursday of each month to learn about and discuss a wide variety of 
-          topics related to developement.
+          was formed to provide a local platform for information sharing among .NET developers in the 
+          Duluth/Superior area.  The group meets the second Thursday of each month to learn about and 
+          discuss a wide variety of topics related to developement.
       </p>
        
       <p> 
-          We are open to discussing any programming language, tool chains, developement patterns, etc. 
+          While the primary focus of this group is .NET, we are open to discussing other programming languages
+          and tool chains. If you program with another technology stack, come to the light and learn what you've 
+          been missing...  ;)
       </p>
          
+      <h3> Standard Meeting Format </h3>
+      <ul>
+        <li>
+          6:30 - 6:45	Mixer, food & drinks
+        </li>
+        <li>
+          6:45 – 7:00	Housekeeping announcements
+        </li>
+        <li>
+          7:00 – 8:00	Meeting part 1
+        </li>
+        <li>
+          8:00 – 8:30	Break, peer networking 
+        </li>
+      </ul>
+      
       <p> 
-          If your interested in attending a meeting feel free to come and check it out.  
-          Join our <a>MeetUp</a> group for meeting remiders.
+          If your interested in attending a feel free to come and check it out.  Better yet bring a friend!
+          Join our <a href="http://www.meetup.com/Duluth-NET-User-Group/">MeetUp</a> group for emailed meeting remiders.
       </p>
       
-      <h2>Next Meeting</h2>
+      <h3>Next Meeting</h3>
       
       <div class="home-event">
         <h4>{{homeVm.event.title}}</h4>
-        <label>Location:</label>
-        <p>{{homeVm.event.location}}</p>
-        <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank"> Map </a> 
-        </br>    
-        <iframe ng-src="{{homeVm.event.locationMapUrl}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </br>
+        <label>Location</label>
+        <p>
+          {{homeVm.event.location}} - 
+          <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank"> Map </a>
+        </p>
+      
+        <iframe ng-show="homeVm.event.locationMapUrl" ng-src="{{homeVm.event.locationMapUrl}}" 
+                width="600" height="450" frameborder="0" style="border:0" allowfullscreen/>
+    
         <label>Date/Time</label>
         <p>{{homeVm.event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p>
-        <p>Summary: {{homeVm.event.info}}</p>
+        <label>Meeting Summary</label>
+        <p>{{homeVm.event.info}}</p>
       </div>
       
     </div>
