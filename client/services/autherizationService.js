@@ -1,4 +1,4 @@
-var inject = ['$rootScope', '$state', 'principalService'];
+var inject = ['$rootScope', '$state', 'PrincipleService'];
 
 /**
  * Firebase authorization service, to register and athenticate with firebase.
@@ -6,7 +6,7 @@ var inject = ['$rootScope', '$state', 'principalService'];
  * @param {object} $rootScope object
  * @param {object} $state (anuglar - ui router)
  */
-var AutherizationService = function($rootScope, $state, principalService) {
+var AutherizationService = function($rootScope, $state, principleService) {
   var service = this;
 
   service.authorize = function() {
@@ -17,12 +17,12 @@ var AutherizationService = function($rootScope, $state, principalService) {
       return; //Don't do any authorization check, or redirects...
     }
 
-    var isAuthenticated = principalService.isAuthenticated();
+    var isAuthenticated = principleService.isAuthenticated();
     // Otherwise if the user is not authenticated, send them to login.
     // if (!isAuthenticated) {
     //   $state.go('app.login');
     // }
-    return principalService.getUser().then(function(ident) {
+    return principleService.getUser().then(function(ident) {
       // Do security checks here, user in role etc, none of that for now...
     });
   }

@@ -12,7 +12,7 @@ var EventsController = function(eventService, principleService){
 		dateTime : "",
 		info : ""
 	};
-
+ 
 	function init(){
 		eventService.getPagedData().then(function(data){
 			vm.events = data;

@@ -14,28 +14,28 @@
               <form name="eventForm" ng-submit="eventVm.add()">
                   
                   <div class="form-group">
-                    <label for="event-title">Title</label>
+                    <strong for="event-title">Title</strong>
                     <input type="text" placeholder="January Usergroup Meeting" ng-model="eventVm.event.title" class="form-control" id="event-title" ></input>
                   </div>
                   
                   <div class="form-group">
-                    <label for="event-date">Date/Time</label>
+                    <strong for="event-date">Date/Time</strong>
                     <input type="datetime-local" ng-model="eventVm.event.dateTime" class="form-control" id="event-date" ></input>
                   </div>
                               
                   <div class="form-group">
-                    <label for="event-location">Location</label>
+                    <strong for="event-location">Location</strong>
                     <input type="text" placeholder="ARI" ng-model="eventVm.event.location" class="form-control" id="event-location" ></input>
                   </div>
                   
                   <div class="form-group">
-                    <label for="event-location-map-url">Location Map Url</label>
+                    <strong for="event-location-map-url">Location Map Url</strong>
                     <input type="text" placeholder="http://google.com/maps/embedded" ng-model="eventVm.event.locationMapUrl" class="form-control" id="event-location-map-url" ></input>
                     <p class="help-block"> Use the embedded google map url as this gets placed in an i-frame</p>
                   </div>
                   
                   <div class="form-group">
-                    <label for="free-form-story-title">Info</label>
+                    <strong for="free-form-story-title">Info</strong>
                     <textarea ng-model="eventVm.event.info" class="form-control" id="event-info" rows="3" required></textarea>
                     <p class="help-block">Event information</p>
                   </div>               
@@ -57,7 +57,7 @@
                 <p>Summary: {{event.info}}</p>
               </div>
               <div class="col-xs-2" >
-                <button class="btn btn-xs btn-danger" ng-click="eventVm.delete(event)">x</button>
+                <button ng-if="eventVm.userAuth" class="btn btn-xs btn-danger" ng-click="eventVm.delete(event)">x</button>
               </div>
           </div>
         </div>

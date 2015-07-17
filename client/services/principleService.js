@@ -5,7 +5,7 @@ var inject = ['Firebase', '$q'];
  * @param {object} Firebase
  * @param {object} $q (anuglar's q)
  */
-var PrincipalService = function(Firebase, $q) {
+var PrincipleService = function(Firebase, $q) {
 
   var service = this;
   var identity = undefined;
@@ -49,6 +49,6 @@ var PrincipalService = function(Firebase, $q) {
 
 }
 
-PrincipalService.$inject = inject;
+PrincipleService.$inject = inject;
 
-module.exports = PrincipalService;
+module.exports = PrincipleService;

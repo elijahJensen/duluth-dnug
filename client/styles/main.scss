@@ -6,9 +6,11 @@ body, html {
 
 body {
   padding-top: 65px;
-  background: white no-repeat center;
+  background: url('../content/bg.jpg') fixed white no-repeat center;
+  background-size: cover;
   background-attachment: fixed;
-  font-family: Courier New, Courier, monospace
+  font-family: Courier New, Courier, monospace;
+  font-weight: bold;
 }
 
 .login {
@@ -21,7 +23,7 @@ footer {
 
   p {
     color: black;
-    font-size: 12px;
+    font-size: 14px;
     display: inline;
     text-transform: uppercase;
     font-family: $font-family-sans-serif;
@@ -60,6 +62,13 @@ footer {
 }
 
 //spacing horizontal
+
+.horizCenter {
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
 .rowLeft0 {
   padding-left: 0;
 }
@@ -74,6 +83,11 @@ footer {
 
 .padLeft5 {
   padding-left: 5px;
+}
+
+//strong differential
+strong {
+  font-size: 1.1em;
 }
 
 //spacing vertical
@@ -92,4 +106,10 @@ footer {
 
 .btn-xs {
   padding: 3px 5px;
+}
+
+@media screen and (max-width: 680px) {
+  .horizCenter {
+    width: 100%;
+  }
 }
