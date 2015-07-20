@@ -6,13 +6,13 @@
       <p> 
           was formed to provide a local platform for information sharing among .NET developers in the 
           Duluth/Superior area.  The group meets the second Thursday of each month to learn about and 
-          discuss a wide variety of topics related to developement.
+          discuss a wide variety of developement related topics.
       </p>
        
       <p> 
           While the primary focus of this group is .NET, we are open to discussing other programming languages
-          and tool chains. If you program with another technology stack, come to the light and learn what you've 
-          been missing...  ;)
+          and tool chains. If you program with another technology stack, come and share your experience and see 
+          what you've been missing... :)
       </p>
          
       <h3> Standard Meeting Format </h3>
@@ -35,21 +35,14 @@
           If your interested in attending feel free to come and check it out.  Better yet bring a friend!
           Join our <a href="http://www.meetup.com/Duluth-NET-User-Group/" target="_blank">MeetUp</a> group for emailed meeting remiders.
       </p>
-      
-      
-      
-      <div class="home-event horizCenter">
+           
+      <div ng-if="homeVm.event" class="home-event horizCenter">
         <h3>--Next Meeting--</h3>
         <h4>{{homeVm.event.title}}</h4>
         <label>Location</label>
         <p>
-          {{homeVm.event.location}} - 
-          <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank"> Map </a>
-        </p>
-      
-        <iframe ng-show="homeVm.event.locationMapUrl" ng-src="{{homeVm.event.locationMapUrl}}" 
-                width="600" height="450" frameborder="0" style="border:0" allowfullscreen/>
-    
+          {{homeVm.event.location}} - <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank">Map</a>
+        </p>  
         <label>Date/Time</label>
         <p>{{homeVm.event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p>
         <label>Meeting Summary</label>

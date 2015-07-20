@@ -3,7 +3,7 @@ require('angular-ui-router');
 require('./templates');
 require('angularfire');
 
-angular.module('app.dsdnug', [
+angular.module('app.dnug', [
 	  'firebase',
 	  'ui.router',
 	  'templates'
@@ -17,10 +17,12 @@ angular.module('app.dsdnug', [
 .service('AccountService', require('./services/accountService'))
 .service('PrincipleService', require('./services/principleService'))
 .controller('AppController', require('./pages/app/controller'))
-.controller('ContactController', require('./pages/contact/controller'))
+.controller('OrganizersController', require('./pages/organizers/controller'))
 .controller('EventsController', require('./pages/events/controller'))
 .controller('HomeController', require('./pages/home/controller'))
 .controller('LoginController', require('./pages/login/controller'))
+.controller('ManageEventsController', require('./pages/manageEvents/controller'))
+.controller('ManageOrganizersController', require('./pages/manageOrganizers/controller'))
 .controller('OrganizersController', require('./pages/organizers/controller'))
 .run(['$rootScope', '$state', '$stateParams', 'AutherizationService', 'PrincipleService',
     function($rootScope, $state, $stateParams, authorizationService, principleService) {
@@ -30,10 +32,10 @@ angular.module('app.dsdnug', [
         $rootScope.toState = toState;
         $rootScope.toStateParams = toStateParams;
 
-        // if (!principleService.isAuthenticated() && !toState.anonymous) {
-        //   $state.transitionTo('app.login')
-        //   event.preventDefault();
-        // }
+        if (!toState.anonymous) {
+          $state.transitionTo('app.login')
+          event.preventDefault();
+        }
 
         // If the principle is resolved, do an authorization check immediately.
         // Otherwise, it'll be done when the state it resolved.

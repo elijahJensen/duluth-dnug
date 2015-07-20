@@ -9,41 +9,51 @@ function RouteConfig(stateProvider, locationProvider, $urlRouterProvider) {
       abstract: true,
       templateUrl: 'pages/app/index.html',
       controller: 'AppController',
-      controllerAs: 'appVm'
-      // resolve: {
-      //   authorize: ['autherizationService',
-      //     function(authorization) {
-      //       return authorization.authorize();
-      //     }
-      //   ]
-      // }
+      controllerAs: 'appVm',
+      resolve: {
+        authorize: ['AutherizationService',
+          function(authorization) {
+            return authorization.authorize();
+          }
+        ]
+      }
     })
     .state('app.home', {
       url: '/',
+      anonymous: true,
       templateUrl: 'pages/home/index.html',
       controller: 'HomeController',
       controllerAs: 'homeVm'
     })
     .state('app.events', {
       url: '/events',
+      anonymous: true,
       templateUrl: 'pages/events/index.html',
       controller: 'EventsController',
       controllerAs: 'eventVm'
     })
-    .state('app.contact', {
-      url: '/contact',
-      templateUrl: 'pages/contact/index.html',
-      controller: 'ContactController',
-      controllerAs: 'contactVm'
+    .state('app.manageEvents', {
+      url: '/events/manage',
+      templateUrl: 'pages/manageEvents/index.html',
+      controller: 'ManageEventsController',
+      controllerAs: 'manageEventsVm'
     })
     .state('app.organizers', {
       url: '/organizers',
+      anonymous: true,
       templateUrl: 'pages/organizers/index.html',
       controller: 'OrganizersController',
       controllerAs: 'organizersVm'
     })
+    .state('app.manageOrganizers', {
+      url: '/organizers/manage',
+      templateUrl: 'pages/manageOrganizers/index.html',
+      controller: 'ManageOrganizersController',
+      controllerAs: 'manageOrganizersVm'
+    })
     .state('app.login', {
       url: '/login',
+      anonymous: true,
       templateUrl: 'pages/login/index.html',
       controller: 'LoginController',
       controllerAs: 'loginVm'

@@ -39,7 +39,7 @@ var EventService = function(Firebase, $firebaseArray, $firebaseObject) {
 
   function getEventListByPriority(pageSize){
     count += pageSize;
-    eventList = $firebaseArray(ref.orderByChild('date').limitToLast(count));
+    eventList = $firebaseArray(ref.orderByChild('dateTime').limitToLast(count));
     return eventList;
   };
 

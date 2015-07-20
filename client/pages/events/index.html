@@ -1,53 +1,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      
-      <!--<div ng-class="{
-           'col-md-6': dashboardCtrl.games && dashboardCtrl.games.length,
-           'col-md-12': !dashboardCtrl.games || !dashboardCtrl.games.length
-        }">-->
-        
-        <details ng-if="eventVm.userAuth">
-          <summary>Add Event</summary>
-             <div class="form">
-              <form name="eventForm" ng-submit="eventVm.add()">
-                  
-                  <div class="form-group">
-                    <strong for="event-title">Title</strong>
-                    <input type="text" placeholder="January Usergroup Meeting" ng-model="eventVm.event.title" class="form-control" id="event-title" ></input>
-                  </div>
-                  
-                  <div class="form-group">
-                    <strong for="event-date">Date/Time</strong>
-                    <input type="datetime-local" ng-model="eventVm.event.dateTime" class="form-control" id="event-date" ></input>
-                  </div>
-                              
-                  <div class="form-group">
-                    <strong for="event-location">Location</strong>
-                    <input type="text" placeholder="ARI" ng-model="eventVm.event.location" class="form-control" id="event-location" ></input>
-                  </div>
-                  
-                  <div class="form-group">
-                    <strong for="event-location-map-url">Location Map Url</strong>
-                    <input type="text" placeholder="http://google.com/maps/embedded" ng-model="eventVm.event.locationMapUrl" class="form-control" id="event-location-map-url" ></input>
-                    <p class="help-block"> Use the embedded google map url as this gets placed in an i-frame</p>
-                  </div>
-                  
-                  <div class="form-group">
-                    <strong for="free-form-story-title">Info</strong>
-                    <textarea ng-model="eventVm.event.info" class="form-control" id="event-info" rows="3" required></textarea>
-                    <p class="help-block">Event information</p>
-                  </div>               
-                
-                  <button type="submit" class="btn btn-success" ng-disabled="eventForm.$invalid">Add Event</button>
-                </form>
-          </div>
-        </details>
-        
+    <div class="col-xs-12">      
         <h2>Events </h2>
-        <div class="list-group">
-          <div class="list-group-item" ng-repeat="event in eventVm.events">
+          <div ng-repeat="event in eventVm.events | orderBy:dateTime">
             <div class="row">
               <div class="col-xs-8">
                 <h3>{{event.title}}</h4>
@@ -55,13 +11,10 @@
                 <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank"> Map </a> 
                 <p>Date/Time: {{event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p>
                 <p>Summary: {{event.info}}</p>
-              </div>
-              <div class="col-xs-2" >
-                <button ng-if="eventVm.userAuth" class="btn btn-xs btn-danger" ng-click="eventVm.delete(event)">x</button>
+                <p>_________________________________________________________________</p>
               </div>
           </div>
         </div>
-    </div>
+     </div>
   </div>
-</div>
 </div>

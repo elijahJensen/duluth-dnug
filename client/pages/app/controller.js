@@ -17,7 +17,6 @@ var AppController = function(principleService, loginService, $state, USERGROUP) 
     $state.go('app.home');
   };
 
-
   return vm;
 
 };

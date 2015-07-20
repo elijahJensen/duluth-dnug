@@ -1,10 +1,9 @@
-var inject = ['EventService', 'PrincipleService']
+var inject = ['EventService']
 
-var EventsController = function(eventService, principleService){
+var EventsController = function(eventService){
 	
 	var vm = this;
 	vm.events = null;
-	vm.userAuth = null;
 	vm.event = {
 		title : "",
 		location : "",
@@ -17,17 +16,6 @@ var EventsController = function(eventService, principleService){
 		eventService.getPagedData().then(function(data){
 			vm.events = data;
 		});	
-		vm.userAuth = principleService.isAuthenticated();	
-	};
-	
-	vm.add = function(){
-		vm.event.dateTime = vm.event.dateTime.getTime();
-		eventService.add(vm.event);
-		vm.event = null;
-	};
-	
-	vm.delete = function(event){
-		eventService.delete(event);
 	};
 	
 	init();

@@ -27,13 +27,18 @@
           </a>
         </li>
         <li>
-          <a ui-sref="app.contact">
-            Contact
+          <a ui-sref="app.organizers">
+            Organizers
+          </a>
+        </li>
+          <li ng-if="appVm.isAuthenticated()">
+          <a ui-sref="app.manageEvents">
+            Manage Events
           </a>
         </li>
         <li ng-if="appVm.isAuthenticated()">
-          <a ui-sref="app.organizers">
-            Manage App Accounts
+          <a ui-sref="app.manageOrganizers">
+            Manage Organizers
           </a>
         </li>
       </ul>
