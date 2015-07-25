@@ -78,7 +78,7 @@
 	        $rootScope.toState = toState;
 	        $rootScope.toStateParams = toStateParams;
 	
-	        if (!toState.anonymous) {
+	        if (!toState.anonymous && !principalService.isAuthenticated()) {
 	          $state.transitionTo('app.login')
 	          event.preventDefault();
 	        }
