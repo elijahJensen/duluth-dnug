@@ -32,7 +32,7 @@ angular.module('app.dnug', [
         $rootScope.toState = toState;
         $rootScope.toStateParams = toStateParams;
 
-        if (!toState.anonymous && !principalService.isAuthenticated()) {
+        if (!toState.anonymous && !principleService.isAuthenticated()) {
           $state.transitionTo('app.login')
           event.preventDefault();
         }
