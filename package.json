@@ -7,6 +7,10 @@
     "start": "node node_modules/foreman/nf.js start",
     "dev": "node node_modules/foreman/nf.js -j Procfile.dev start"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://duluthdnug.scm.azurewebsites.net/duluthdnug.git"
+  },
   "author": "",
   "license": "(c)2015 Waldos Code",
   "devDependencies": {
