@@ -39,15 +39,17 @@
       <div ng-if="homeVm.event" class="home-event horizCenter">
         <h3>--Next Meeting--</h3>
         <h4>{{homeVm.event.title}}</h4>
-        <label>Location</label>
+        <strong>Location:</strong>
         <p>
           {{homeVm.event.location}} - <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank">Map</a>
         </p>  
-        <label>Date/Time</label>
+        <strong>Date/Time:</strong>
         <p>{{homeVm.event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p>
-        <label>Meeting Summary</label>
+        <strong>Meeting Summary:</strong>
         <p>{{homeVm.event.info}}</p>
       </div>
+      
+      <img src="http://www.ineta.org/OfficialLogo.ashx?ugid=3113" alt="Official INETA Logo" width="114px" height="70px" />
       
     </div>
   </div>
