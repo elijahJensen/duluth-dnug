@@ -3,18 +3,18 @@
   <div class="container-fluid">
 
     <div class="navbar-header">
-      <a type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigationbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </a>
+      </button>
       <a href class="navbar-brand" ui-sref="app.home">
        {{appVm.userGroupName}}
       </a>
     </div>
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navigationbar">
       <ul class="nav navbar-nav">
         <li ui-sref-active="active">
           <a ui-sref="app.home">
@@ -31,7 +31,7 @@
             Organizers
           </a>
         </li>
-          <li ng-if="appVm.isAuthenticated()">
+        <li ng-if="appVm.isAuthenticated()">
           <a ui-sref="app.manageEvents">
             Manage Events
           </a>

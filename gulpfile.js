@@ -41,7 +41,6 @@ gulp.task('content', function () {
     .pipe(gulp.dest('dist/content/'));
 });
 
-
 fs.readdirSync('build/tasks').forEach(function(file) {
   require('./build/tasks/' + file);
 });
