@@ -2,16 +2,20 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">      
-        <h2>Events </h2>
+        <h1>Events </h1>
           <div ng-repeat="event in eventVm.events | orderBy:dateTime">
             <div class="row">
               <div class="col-xs-8">
-                <h3>{{event.title}}</h4>
-                <h4>Location: {{event.location}}</h5>
-                <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank"> Map </a> 
-                <p>Date/Time: {{event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p>
-                <p>Summary: {{event.info}}</p>
-                <p>_________________________________________________________________</p>
+                <strong>Event:</strong>
+                <p> {{event.title}}</p>
+                <strong>Location:</strong>
+                <p> {{event.location}} 
+                  <a ng-href="{{event.locationMapUrl}}" target="_blank"> Map </a> 
+                </p>
+                <strong>Date/Time:</strong>
+                <p>{{event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p>
+                <strong>Summary:</strong>
+                <p> {{event.info}}</p>
               </div>
           </div>
         </div>
