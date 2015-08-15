@@ -2,7 +2,8 @@
  
 ## Abstract ##
 
-A simple Angular app created for our .NET user group.  Allows scheduling of events, and managing user group officers.  
+A simple Angular app created for our .NET user group.  Allows scheduling of events, and managing user group officers. 
+[[www.duluthdnug.org]]
 
 ## To Run ##
 
