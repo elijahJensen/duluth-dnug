@@ -6,11 +6,14 @@ A simple Angular app created for our .NET user group.  Allows scheduling of even
 
 ## To Run ##
 
-    #Develope
-	gulp dev
+    #Start Server
+    npm start
+    
+    #Develop
+    gulp dev
 
-	#Build 
-	gulp build --production
+    #Build 
+    gulp build --production
 
 
 	
