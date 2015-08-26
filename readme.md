@@ -6,7 +6,7 @@ A simple Angular app created for our .NET user group.  Allows scheduling of even
 www.duluthdnug.org
 
 ## To Run ##
-Rename the included example enviroment file to just .env and change contents to match what you need for your enviroment.
+Rename the included example enviroment file env.sample to .env and change contents to match what you need for your enviroment.
 
     #Start Server
     npm start
