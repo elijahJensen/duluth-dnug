@@ -8,8 +8,6 @@ gulp.task('sass', function() {
 
   gulp.src('client/styles/main.scss')
     .pipe(sass({
-      sourcemap: true,
-      sourcemapPath: '../../',
       loadPath: [
         './node_modules/bootstrap-sass/assets/stylesheets'
       ]
