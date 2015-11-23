@@ -19,7 +19,7 @@ var HomeController = function(eventService, meetupService, $sce, USERGROUP){
 							        location:data.venue.name + ' ' + data.venue.address_1 + ', ' + data.venue.city,
 							        dateTime:new Date(data.time).toString(),
 						          info:$sce.trustAsHtml(data.description)};
-					vm.googleMapUrl = $sce.trustAsResourceUrl(GMAP_URL);
+					vm.googleMapUrl = $sce.trustAsResourceUrl(AppSettings.GMAP_URL);
 				}
 			});
 		}else{ //Firebasing it yo!
