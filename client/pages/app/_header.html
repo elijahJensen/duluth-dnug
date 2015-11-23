@@ -23,10 +23,10 @@
                   Manage Organizers</a>
               </li>
               <li class="pull-right">
-                    <a href ui-sref="app.login" class="login" ng-if="!appVm.isAuthenticated()">
+                    <a ui-sref="app.login" class="login" ng-if="!appVm.isAuthenticated()">
                     Log In
                     </a>       
-                    <a href ng-click="appVm.logOff()" ng-if="appVm.isAuthenticated()">
+                    <a ng-click="appVm.logOff()" ng-if="appVm.isAuthenticated()">
                     Log Out
                     </a>
                </li>
