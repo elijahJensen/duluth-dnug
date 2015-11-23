@@ -5643,9 +5643,7 @@ body {
   background: url("../content/bg.jpg") fixed white no-repeat center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: Courier New, Courier, monospace;
-  font-weight: bold;
-  font-size: medium; }
+  font-family: Courier New, Courier, monospace; }
 
 .login {
   margin-right: 10px; }
@@ -5687,6 +5685,12 @@ footer {
   margin-right: auto;
   width: 35%; }
 
+.logo {
+  width: 200px;
+  height: 75px;
+  opacity: 1;
+  background-position: 0 .5em; }
+
 .rowLeft0 {
   padding-left: 0; }
 
@@ -5698,9 +5702,6 @@ footer {
 
 .padLeft5 {
   padding-left: 5px; }
-
-strong {
-  font-size: 1.1em; }
 
 .top1 {
   margin-top: 10px; }

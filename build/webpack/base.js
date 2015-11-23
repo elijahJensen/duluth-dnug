@@ -26,7 +26,6 @@ var baseConfig = {
         MEETUP_API_KEY: JSON.stringify(process.env.MEETUP_API_KEY),
         MEETUP_URLNAME: JSON.stringify(process.env.MEETUP_URLNAME),
         }}),
-    new webpack.UglifyPlugin(),
     new webpack.ProvidePlugin({
         angular: 'angular',
         jQuery: 'jquery',
