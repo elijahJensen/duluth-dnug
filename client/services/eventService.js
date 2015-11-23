@@ -8,7 +8,7 @@ var inject = ['Firebase', '$firebaseArray', '$firebaseObject'];
 
 var EventService = function(Firebase, $firebaseArray, $firebaseObject) {
 
-  var ref = new Firebase('https://' + FIREBASE_URL).child('events');
+  var ref = new Firebase('https://' + AppSettings.FIREBASE_URL).child('events');
   var eventList = null;
   var service = this;
   var count = 0;

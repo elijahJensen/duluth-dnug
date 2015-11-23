@@ -9,7 +9,7 @@ var PrincipleService = function(Firebase, $q) {
 
   var service = this;
   var identity = undefined;
-  var ref = new Firebase('https://' + FIREBASE_URL);
+  var ref = new Firebase('https://' + AppSettings.FIREBASE_URL);
 
   service.isIdentityResolved = function() {
     return angular.isDefined(identity);

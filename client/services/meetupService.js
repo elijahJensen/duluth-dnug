@@ -8,7 +8,7 @@ var MeetupService = function($q,$http) {
 
   var service = this;
   var baseUrl = '/api/v1/events';
-  var groupQuery = '?key='+ MEETUP_API_KEY + '&group_urlname=' + MEETUP_URLNAME + '&sign=true';
+  var groupQuery = '?key='+ AppSettings.MEETUP_API_KEY + '&group_urlname=' + AppSettings.MEETUP_URLNAME + '&sign=true';
    
    /**
    * Get meetup events for user group.

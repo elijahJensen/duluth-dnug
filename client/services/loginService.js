@@ -14,7 +14,7 @@ var inject = ['Firebase', '$q'];
 var LoginService = function(Firebase, $q) {
 
   var service = this;
-  var ref = new Firebase('https://' + FIREBASE_URL);
+  var ref = new Firebase('https://' + AppSettings.FIREBASE_URL);
 
   /**
    * Logs in an existing firebase user.

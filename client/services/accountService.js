@@ -8,7 +8,7 @@ var inject = ['Firebase', '$q', '$firebaseArray'];
 var AccountService = function(Firebase, $q, $firebaseArray) {
 
   var service = this;
-  var ref = new Firebase('https://' + FIREBASE_URL).child("users");
+  var ref = new Firebase('https://' + AppSettings.FIREBASE_URL).child("users");
   var users = null;
   
    function init(){
