@@ -1,10 +1,11 @@
-var inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
+var inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', '$urlMatcherFactoryProvider'];
 
-function RouteConfig(stateProvider, locationProvider, $urlRouterProvider) {
+function RouteConfig($stateProvider, $locationProvider, $urlRouterProvider, $urlMatcherFactoryProvider) {
 
   $urlRouterProvider.otherwise("/");
-
-  stateProvider
+  $urlMatcherFactoryProvider.strictMode(false);
+  $urlMatcherFactoryProvider.caseInsensitive(true);
+  $stateProvider
     .state('app', {
       abstract: true,
       templateUrl: 'pages/app/index.html',
@@ -43,7 +44,7 @@ function RouteConfig(stateProvider, locationProvider, $urlRouterProvider) {
       anonymous: true,
       templateUrl: 'pages/organizers/index.html',
       controller: 'OrganizersController',
-      controllerAs: 'organizersVm'
+      controllerAs: 'organizersVm',
     })
     .state('app.manageOrganizers', {
       url: '/organizers/manage',
@@ -58,8 +59,8 @@ function RouteConfig(stateProvider, locationProvider, $urlRouterProvider) {
       controller: 'LoginController',
       controllerAs: 'loginVm'
     });
-    
-  locationProvider.html5Mode(true);
+
+  $locationProvider.html5Mode(true);
   
 };
 

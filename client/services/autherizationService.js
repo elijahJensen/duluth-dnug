@@ -11,17 +11,15 @@ var AutherizationService = function($rootScope, $state, principleService) {
 
   service.authorize = function() {
 
-    if ($rootScope.toState.name === "app.home"
-    || $rootScope.toState.name === "app.events"
-    || $rootScope.toState.name === "app.contact") {
+    if ($rootScope.toState.anonymous) {
       return; //Don't do any authorization check, or redirects...
     }
 
     var isAuthenticated = principleService.isAuthenticated();
     // Otherwise if the user is not authenticated, send them to login.
-    // if (!isAuthenticated) {
-    //   $state.go('app.login');
-    // }
+    if (!isAuthenticated) {
+      $state.go('app.login');
+    }
     return principleService.getUser().then(function(ident) {
       // Do security checks here, user in role etc, none of that for now...
     });

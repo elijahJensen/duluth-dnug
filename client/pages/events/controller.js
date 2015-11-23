@@ -1,21 +1,35 @@
-var inject = ['EventService']
+var inject = ['EventService', 'MeetupService', '$sce']
 
-var EventsController = function(eventService){
+var EventsController = function(eventService, meetupService, $sce){
 	
 	var vm = this;
-	vm.events = null;
 	vm.event = {
 		title : "",
 		location : "",
 		locationMapUrl: "",
 		dateTime : "",
-		info : ""
-	};
- 
+		info : ""};
+	vm.events = [];
+
 	function init(){
-		eventService.getPagedData().then(function(data){
-			vm.events = data;
-		});	
+		if (AppSettings.MEETUP_API_KEY && AppSettings.MEETUP_URLNAME){
+			meetupService.getPastEvents().then(function(result){
+				if (result && result.data && result.data.results)
+					for (var i=0; i < result.data.results.length; i++){
+						var data = result.data.results[i];
+						vm.events.push({title:data.name,
+								location:data.venue.name + ' ' + data.venue.address_1 + ', ' + data.venue.city,
+								dateTime:new Date(data.time).toString(),
+							  info:$sce.trustAsHtml(data.description)});
+					}
+					vm.events.reverse();
+				});
+		}else{
+			eventService.getPagedData().then(function(data){
+				vm.events = data;
+			});	
+		}
+		
 	};
 	
 	init();

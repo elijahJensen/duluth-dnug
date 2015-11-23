@@ -1,30 +1,34 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
       
-      <h1>Contact Info</h1>
-      
-      <h2>Interested in presenting to our group?</h2>
-      
-      <p> 
+    <h1>Contact Info</h1>
+    <div class="panel">
+      <div class="panel-body">
+        <h2>Interested in presenting to our group?</h2>
+        <p> 
           We are always looking to bring new content to our group.  If your intersted in presenting
           at one of our meetings, we'd like to invite you to contact one of us.  Let us know what topic 
           you would like to present, and we'll add you to the calendar.
-      </p>
-      
-      </br>
-      
-      <h3>Group Organizers</h3>
-      <ul ng-repeat="contact in organizersVm.contacts">
-        <li>
-          <address>
-            <p>{{contact.title}}</p>
-            <p>{{contact.firstName}} {{contact.lastName}}</p>
-            <span><a ng-href="mailTo:{{contact.email}}">{{contact.email}}</a></span>
-          </address>
-        </li>
-      </ul>
-  
+        </p>
+      </div>
+    </div> 
+    
+    </br>
+    
+    <div class="panel">
+      <div class="panel-body">
+        <h3>Group Organizers</h3>
+        <ul ng-repeat="contact in organizersVm.contacts">
+          <li>
+            <address>
+              <p>{{contact.title}}</p>
+              <p>{{contact.firstName}} {{contact.lastName}}</p>
+              <span><a ng-href="mailTo:{{contact.email}}">{{contact.email}}</a></span>
+            </address>
+          </li>
+        </ul>
+      </div>
     </div>
+    
   </div>
 </div>

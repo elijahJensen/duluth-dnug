@@ -1,52 +1,106 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>{{homeVm.userGroup}}</h1>
-      
+
+  <div class="jumbotron">
+    <div class="container">
+     <h1>{{homeVm.userGroup}}</h1>
       <p> 
-          was formed to provide a local platform for information sharing among .NET developers in the 
+          The Duluth .NET User Group was formed to provide a local platform for information sharing among .NET developers in the 
           Duluth/Superior area.  The group meets the second Thursday of each month to learn about and 
           discuss a wide variety of development related topics.
       </p>
-       
-      <p> 
-          While the primary focus of this group is .NET, we are open to discussing other programming languages
-          and tool chains. If you program with another technology stack, come and share your experience and see 
-          what you've been missing... :)
-      </p>
-         
-      <h2> Standard Meeting Format </h2>
-      <ul>
-        <li>
-          6:30 - 6:45	Mixer, food & drinks
-        </li>
-        <li>
-          6:45 – 7:00	Housekeeping announcements
-        </li>
-        <li>
-          7:00 – 8:00	Main event
-        </li>
-        <li>
-          8:00 – 8:30	Break, peer networking 
-        </li>
-      </ul>
-      
-      <p> 
-          If you're interested in attending feel free to come and check it out.  Better yet bring a friend!
-          Join our <a href="http://www.meetup.com/Duluth-NET-User-Group/" target="_blank">MeetUp</a> group for emailed meeting remiders.
-      </p>
-           
-      <div ng-if="homeVm.event" class="home-event horizCenter">
-        <h3>--Next Meeting--</h3>
-        <h4>{{homeVm.event.title}}</h4>
-        <strong>Location:</strong>
-        <p>
-          {{homeVm.event.location}} - <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank">Map</a>
-        </p>  
-        <strong>Date/Time:</strong>
-        <p>{{homeVm.event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p>
-        <strong>Meeting Summary:</strong>
-        <p>{{homeVm.event.info}}</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-6 col-md-6">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>Meeting Format</h3>
+          <p>
+            <ul>
+              <li>
+                6:30 - 6:45 Mixer, food & drinks
+              </li>
+              <li>
+                6:45 – 7:00 Housekeeping & announcements
+              </li>
+              <li>
+                7:00 – 8:00 Event
+              </li>
+              <li>
+                8:00 – 8:30 Break & peer networking 
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>Join Us!</h3>
+          <p> 
+              If you're interested in attending feel free to come and check it out. Pizza provided.  Feel free to bring a friend!
+          </p>
+          <p>
+              Join our <a href="http://www.meetup.com/Duluth-NET-User-Group/" target="_blank">MeetUp</a> group for emailed meeting remiders.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <div ng-if="homeVm.event" class="caption">
+          <h1>Next User Group Meeting</h1>
+          <dl>
+            <dt><h2>Topic</h2></dt>
+            <dd><p>{{homeVm.event.title}}</p></dd>
+            <dt><h2>When?</h2></dt>
+            <dd><p>{{homeVm.event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</p></dd>
+            <dt><h2>Where?</h2></dt>
+            <dd><p>{{homeVm.event.location}}</p></dd>
+            <dt><h2>Summary</h2></dt>
+            <dd><p><span ng-bind-html="homeVm.event.info"></span></p></dd>
+          </dl>
+      </div>   
+    </div>
+  </div>
+
+  <div class="well">
+    <h1>Meeting Location</h1>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" ng-src="{{homeVm.googleMapUrl}}" frameborder="0" style="border:0"></iframe>
+    </div>
+  </div>
+  
+  <br/>     
+  <hr/>
+
+  <div class="panel">
+  <div class="panel-body">
+   <h2> Sponsored by </h2>
+      <div class="col-sm-6 col-md-6">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>Jet Brains</h3>
+            <a href="http://www.jetbrains.com" target="_blank">
+                <img class="logo" src="../content/jb_logo.png"/>
+            </a> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-6">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>ARI</h3>
+            <a href="http://arinet.com/"  target="_blank">
+              <img class="logo"  src="../content/ari_logo.jpg"/>
+            </a> 
+          </div>
+        </div>
       </div>
     </div>
   </div>

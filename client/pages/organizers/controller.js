@@ -2,7 +2,7 @@ var inject = ['AccountService'];
 
 var OrganizersController = function(accntService){
 	var vm = this;
-	vm.contacts = [];
+	vm.contacts = null;
 	
 	function init(){
 		vm.contacts = accntService.getUsers(); 
@@ -14,5 +14,4 @@ var OrganizersController = function(accntService){
 };
 
 OrganizersController.$inject = inject;
-
 module.exports = OrganizersController;

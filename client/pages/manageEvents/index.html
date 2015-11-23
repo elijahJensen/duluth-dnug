@@ -1,7 +1,10 @@
 
 <div class="container">
-  <div class="row">
+   <div ng-if="manageEventsVm.isUsingMeetup" class="row">
+    <h1> This site is conifgured to use <a href="{{manageEventsVm.meetupUrl}}">meetup.com</a> to manage your meetings.</h1>
     
+   </div>
+  <div ng-if="!manageEventsVm.isUsingMeetup" class="row">
     <div class="col-md-4">
         <div ng-if="manageEventsVm.userAuth">
              <div class="form">
@@ -23,12 +26,6 @@
                   </div>
                   
                   <div class="form-group">
-                    <strong for="event-location-map-url">Location Map Url</strong>
-                    <input type="text" placeholder="http://google.com/maps/" ng-model="manageEventsVm.event.locationMapUrl" class="form-control" id="event-location-map-url" ></input>
-                    <p class="help-block"> Use Bing or Google map URL</p>
-                  </div>
-                  
-                  <div class="form-group">
                     <strong for="free-form-story-title">Info</strong>
                     <textarea ng-model="manageEventsVm.event.info" class="form-control" id="event-info" rows="3" required></textarea>
                     <p class="help-block">Event information</p>
@@ -38,8 +35,7 @@
                 </form>
           </div>
         </div>
-      </div>
-          
+      </div> 
       <div class="col-md-8">  
         <h2>Events</h2>
         <div class="table-responsive"> 

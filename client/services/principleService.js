@@ -16,7 +16,7 @@ var PrincipleService = function(Firebase, $q) {
   };
 
   service.isAuthenticated = function() {
-    return getAuth();
+    return ref.getAuth();
   };
 
   /**
@@ -30,7 +30,7 @@ var PrincipleService = function(Firebase, $q) {
     if (service.isIdentityResolved()) {
       deferred.resolve(identity);
     } else {
-      ref.child("users").child(getAuth().uid)
+      ref.child("users").child(ref.getAuth().uid)
         .once("value", function(snapshot) {
           identity = snapshot.val();
           deferred.resolve(identity);
@@ -40,10 +40,6 @@ var PrincipleService = function(Firebase, $q) {
     }
     return deferred.promise;
   };
-
-  function getAuth(){
-    return ref.getAuth();
-  }
 
   return service;
 

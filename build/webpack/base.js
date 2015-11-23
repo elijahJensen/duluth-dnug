@@ -20,8 +20,12 @@ var baseConfig = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      FIREBASE_URL: JSON.stringify(process.env.FIREBASE_URL)
-    }),
+      "AppSettings" : {
+        FIREBASE_URL: JSON.stringify(process.env.FIREBASE_URL),
+        GMAP_URL: JSON.stringify(process.env.GMAP_URL),
+        MEETUP_API_KEY: JSON.stringify(process.env.MEETUP_API_KEY),
+        MEETUP_URLNAME: JSON.stringify(process.env.MEETUP_URLNAME),
+        }}),
     // new webpack.UglifyPlugin(),
     new webpack.ProvidePlugin({
         angular: 'angular',

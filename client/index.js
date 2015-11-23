@@ -16,6 +16,7 @@ angular.module('app.dnug', [
 .service('AutherizationService', require('./services/autherizationService'))
 .service('AccountService', require('./services/accountService'))
 .service('PrincipleService', require('./services/principleService'))
+.service('MeetupService', require("./services/meetupService"))
 .controller('AppController', require('./pages/app/controller'))
 .controller('OrganizersController', require('./pages/organizers/controller'))
 .controller('EventsController', require('./pages/events/controller'))
@@ -26,6 +27,8 @@ angular.module('app.dnug', [
 .controller('OrganizersController', require('./pages/organizers/controller'))
 .run(['$rootScope', '$state', '$stateParams', 'AutherizationService', 'PrincipleService',
     function($rootScope, $state, $stateParams, authorizationService, principleService) {
+
+       $rootScope.$on("$stateChangeError", console.log.bind(console));
 
       $rootScope.$on('$stateChangeStart', function(event, toState, toStateParams) {
         // Track the state the user wants to go to, for authorization service
