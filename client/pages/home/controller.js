@@ -15,19 +15,27 @@ var HomeController = function(eventService, meetupService, $sce, USERGROUP){
 			meetupService.getUpcomingEvents().then(function(result){
 				if (result && result.data && result.data.results){
 					var data = result.data.results[0];
-					vm.event = {title:data.name,
-							        location:data.venue.name + ' ' + data.venue.address_1 + ', ' + data.venue.city,
-							        dateTime:new Date(data.time).toString(),
-						          info:$sce.trustAsHtml(data.description)};
-					vm.googleMapUrl = $sce.trustAsResourceUrl(AppSettings.GMAP_URL);
+                    if (data){
+                        vm.event = {title:data.name,
+							    location:data.venue.name + ' ' + data.venue.address_1 + ', ' + data.venue.city,
+							    dateTime:new Date(data.time).toString(),
+						        info:$sce.trustAsHtml(data.description)
+                                };
+                    }else{
+                         vm.event = {title:"We are planning our next meetup!",
+							    location: "120 W. 2nd Street, Duluth, MN",
+							    dateTime: "2nd Thursday of the month @ 6:30 p.m.",
+						        info:$sce.trustAsHtml("Do you have a suggestion for a meetup?  Feel free to contact us!")
+                                };
+                    }
 				}
 			});
 		}else{ //Firebasing it yo!
 			eventService.getPagedData().then(function(data){
-			vm.event = data[data.length - 1];
-		});
-		}
-	
+			     vm.event = data[data.length - 1];
+		    });
+        }
+		vm.googleMapUrl = $sce.trustAsResourceUrl(AppSettings.GMAP_URL);
 	};
 	
 	init();
