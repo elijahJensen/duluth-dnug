@@ -32,6 +32,8 @@ Simple way to integrate google maps without using the API, provide the IFRAME UR
 ## To Run ##
 Rename the included example enviroment file (env.sample) to .env and change contents to match what you need for your enviroment.
 
+Install gulp & webpack. 
+
     #Start Server
     npm start
     
