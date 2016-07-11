@@ -1,4 +1,7 @@
+$enable-rounded: false;
+
 @import "bootstrap";
+@import url(//fonts.googleapis.com/css?family=Abel);
 
 body, html {
   height: 100%;
@@ -9,7 +12,7 @@ body {
   background: url('../content/bg.jpg') fixed white no-repeat center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: Courier New, Courier, monospace;
+  font-family: 'Abel', sans-serif;
 }
 
 .login {
@@ -102,6 +105,16 @@ footer {
   max-width: 100%;
 }
 
+//borders
+
+.border-bottom {
+  border-bottom: 0.2em solid #eee;
+}
+
+.border-0 {
+  border-width: 0;
+}
+
 //overwrites
 
 .btn-xs {
@@ -110,7 +123,7 @@ footer {
 
 .table-responsive{
     background-color:#fff;
-}  
+}
 
 @media screen and (max-width: 680px) {
   .horizCenter {

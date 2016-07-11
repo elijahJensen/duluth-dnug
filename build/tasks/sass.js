@@ -3,13 +3,10 @@ var sass = require('gulp-ruby-sass');
 
 gulp.task('sass', function() {
 
-  gulp.src('./node_modules/bootstrap-sass/assets/fonts/bootstrap/*.*')
-    .pipe(gulp.dest('dist/fonts'));
-
   gulp.src('client/styles/main.scss')
     .pipe(sass({
       loadPath: [
-        './node_modules/bootstrap-sass/assets/stylesheets'
+        './node_modules/bootstrap/scss'
       ]
     }))
       .on('error', console.log)
