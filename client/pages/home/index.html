@@ -1,7 +1,9 @@
 <div class="container">
-    <div class="jumbotron">
-        <div class="container">
-            <h1>{{homeVm.userGroup}}</h1>
+    <div class="row">
+        <div class="col-sm-4">
+          <img class="img-fluid" src="../content/duluthdnugLogo.png" alt="Duluth .net user group" />
+        </div>
+        <div class="col-sm-8">
             <p>
                 The Duluth .NET User Group was formed to provide a local platform for information sharing among .NET developers in the Duluth/Superior
                 area. The group meets the second Thursday of each month to learn about and discuss a wide variety of development
@@ -50,10 +52,10 @@
         </div>
     </div>
 
-    <div class="jumbotron">
-        <div class="container">
-            <div ng-if="homeVm.event" class="caption">
-                <h1>Next User Group Meeting</h1>
+        <section class="container card card-block">
+            <div ng-if="homeVm.event" class="row">
+                <h1 class="col-xs-12">Next User Group Meeting</h1>
+                <article class="col-xs-12 col-lg-7">
                 <dl>
                     <dt><h2>Topic</h2></dt>
                     <dd>
@@ -72,13 +74,13 @@
                         <p><span ng-bind-html="homeVm.event.info"></span></p>
                     </dd>
                 </dl>
+              </article>
+              <article class="col-xs-12 col-lg-5">
+                <h2 class="text-muted">Meeting Location</h2>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" ng-src="{{homeVm.googleMapUrl}}" frameborder="0" style="border:0"></iframe>
+                </div>
+              </article>
             </div>
-        </div>
-    </div>
-    <div class="well">
-        <h1>Meeting Location</h1>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" ng-src="{{homeVm.googleMapUrl}}" frameborder="0" style="border:0"></iframe>
-        </div>
-    </div>
+        </section>
 </div>
