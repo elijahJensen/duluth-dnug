@@ -4501,11 +4501,18 @@ body, html {
   height: 100%; }
 
 body {
-  padding-top: 65px;
-  background: url("../content/bg.jpg") fixed white no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
   font-family: 'Abel', sans-serif; }
+
+.funky-bg {
+  background: linear-gradient(135deg, #eee 22px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px), linear-gradient(225deg, #eee 22px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px) 0 64px;
+  background-color: #eee;
+  background-size: 64px 128px; }
+
+.bg-hero {
+  background: url("../content/bg2.jpg") fixed #231b16 no-repeat center;
+  background-size: cover;
+  padding: 7rem 0;
+  color: #ccc; }
 
 .login {
   margin-right: 10px; }
@@ -4539,8 +4546,11 @@ footer {
   border-bottom: 1px solid #ddd;
   padding: 15px; }
 
-.nav-tabs {
-  margin-bottom: 0; }
+.nav_item {
+  float: left;
+  margin-right: 1rem; }
+  .nav_item:last-child {
+    margin-right: 0; }
 
 .horizCenter {
   margin-left: auto;
