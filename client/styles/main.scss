@@ -1,4 +1,5 @@
 $enable-rounded: false;
+$brand-primary: #148DCB;
 
 @import "bootstrap";
 @import url(//fonts.googleapis.com/css?family=Abel);
@@ -28,6 +29,14 @@ body {
 
 .login {
   margin-right: 10px;
+}
+
+.card-inverse {
+  color: #fff;
+}
+
+.card-ddnug {
+  background-color: $brand-primary;
 }
 
 footer {
