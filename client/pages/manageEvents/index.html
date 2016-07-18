@@ -1,44 +1,44 @@
 
-<div class="container">
+<div class="container p-t-7">
    <div ng-if="manageEventsVm.isUsingMeetup" class="row">
     <h1> This site is conifgured to use <a href="{{manageEventsVm.meetupUrl}}">meetup.com</a> to manage your meetings.</h1>
-    
+
    </div>
   <div ng-if="!manageEventsVm.isUsingMeetup" class="row">
     <div class="col-md-4">
         <div ng-if="manageEventsVm.userAuth">
              <div class="form">
               <form name="eventForm" ng-submit="manageEventsVm.add()">
-                  
+
                   <div class="form-group">
                     <strong for="event-title">Title</strong>
                     <input type="text" placeholder="January Usergroup Meeting" ng-model="manageEventsVm.event.title" class="form-control" id="event-title" ></input>
                   </div>
-                  
+
                   <div class="form-group">
                     <strong for="event-date">Date/Time</strong>
                     <input type="datetime-local" ng-model="manageEventsVm.event.dateTime" class="form-control" id="event-date" ></input>
                   </div>
-                              
+
                   <div class="form-group">
                     <strong for="event-location">Location</strong>
                     <input type="text" placeholder="ARI" ng-model="manageEventsVm.event.location" class="form-control" id="event-location" ></input>
                   </div>
-                  
+
                   <div class="form-group">
                     <strong for="free-form-story-title">Info</strong>
                     <textarea ng-model="manageEventsVm.event.info" class="form-control" id="event-info" rows="3" required></textarea>
                     <p class="help-block">Event information</p>
-                  </div>               
-                
+                  </div>
+
                   <button type="submit" class="btn btn-success pull-right" ng-disabled="eventForm.$invalid">Add Event</button>
                 </form>
           </div>
         </div>
-      </div> 
-      <div class="col-md-8">  
+      </div>
+      <div class="col-md-8">
         <h2>Events</h2>
-        <div class="table-responsive"> 
+        <div class="table-responsive">
           <table class="table table-bordered table-condensed">
             <thead>
               <tr>
@@ -65,7 +65,7 @@
                 {{event.title}}
               </th>
               <th>
-                {{event.location}} - <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank"> Map </a> 
+                {{event.location}} - <a ng-href="{{homeVm.event.locationMapUrl}}" target="_blank"> Map </a>
               </th>
                <th>
                 {{event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}

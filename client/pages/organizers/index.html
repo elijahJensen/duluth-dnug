@@ -1,34 +1,28 @@
-<div class="container">
+<div class="container p-t-7">
   <div class="row">
-      
-    <h1>Contact Info</h1>
-    <div class="panel">
-      <div class="panel-body">
-        <h2>Interested in presenting to our group?</h2>
-        <p> 
+    <div class="col-xs-12">
+    <h1 class="page-header p-b-1 m-b-1">Contact Info</h1>
+    <div class="card">
+      <h2 class="card-header">Interested in presenting to our group?</h2>
+      <div class="card-block">
+        <p>
           We are always looking to bring new content to our group.  If your intersted in presenting
-          at one of our meetings, we'd like to invite you to contact one of us.  Let us know what topic 
+          at one of our meetings, we'd like to invite you to contact one of us.  Let us know what topic
           you would like to present, and we'll add you to the calendar.
         </p>
       </div>
-    </div> 
-    
-    </br>
-    
-    <div class="panel">
-      <div class="panel-body">
-        <h3>Group Organizers</h3>
-        <ul ng-repeat="contact in organizersVm.contacts">
-          <li>
-            <address>
-              <p>{{contact.title}}</p>
-              <p>{{contact.firstName}} {{contact.lastName}}</p>
-              <span><a ng-href="mailTo:{{contact.email}}">{{contact.email}}</a></span>
-            </address>
-          </li>
-        </ul>
+    </div>
+  </div>
+    <div class="col-xs-12">
+    <div class="card">
+      <h3 class="card-header">Group Organizers</h3>
+      <div class="card-block">
+        <address ng-repeat="contact in organizersVm.contacts">
+          <h4>{{contact.title}}</h4>
+          <p>{{contact.firstName}} {{contact.lastName}} - <span><a ng-href="mailTo:{{contact.email}}">{{contact.email}}</a></span></p>
+        </address>
       </div>
     </div>
-    
+</div>
   </div>
 </div>

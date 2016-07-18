@@ -1,7 +1,7 @@
 var inject = ['EventService', 'MeetupService', '$sce']
 
 var EventsController = function(eventService, meetupService, $sce){
-	
+console.log("hit!");
 	var vm = this;
 	vm.event = {
 		title : "",
@@ -12,6 +12,7 @@ var EventsController = function(eventService, meetupService, $sce){
 	vm.events = [];
 
 	function init(){
+
 		if (AppSettings.MEETUP_API_KEY && AppSettings.MEETUP_URLNAME){
 			meetupService.getPastEvents().then(function(result){
 				if (result && result.data && result.data.results)
@@ -27,14 +28,15 @@ var EventsController = function(eventService, meetupService, $sce){
 		}else{
 			eventService.getPagedData().then(function(data){
 				vm.events = data;
-			});	
+			});
 		}
-		
+
 	};
-	
+
 	init();
-	
+
 	return vm;
+
 };
 
 EventsController.$inject = inject;

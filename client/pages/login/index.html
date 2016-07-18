@@ -1,24 +1,23 @@
-<div class="container">
+<div class="container p-t-7">
   <div class="row">
-    <h1>Login</h1>
-    <div class="col-xs-3"></div>
-    
-    <div class="col-xs-6">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+      <h1 class="page-header p-b-1 m-b-1">Login</h1>
+      <div class="card card-block">
       <form name="login" class="form-horizontal" ng-submit="loginVm.login()">
         <div class="alert alert-warning" ng-show="loginVm.loginForm.message">
           <strong>Whoops!</strong>
           <p>{{loginVm.loginForm.message}}</p>
-        </div>  
+        </div>
         <div class="form-group">
           <label for="loginEmail" class="control-label">
             Email
           </label>
           <div>
-            <input ng-model="loginVm.loginForm.email" 
+            <input ng-model="loginVm.loginForm.email"
               class="form-control"
-              type="email" 
-              name="loginEmail" 
-              placeholder="yourname@domain.com" 
+              type="email"
+              name="loginEmail"
+              placeholder="yourname@domain.com"
               required />
           </div>
         </div>
@@ -27,25 +26,23 @@
             Password
           </label>
           <div>
-            <input ng-model="loginVm.loginForm.pword" 
+            <input ng-model="loginVm.loginForm.pword"
               class="form-control"
               type="password"
-              name="loginPassword" 
-              placeholder="password" 
+              name="loginPassword"
+              placeholder="password"
               required />
           </div>
         </div>
-      
+
         <button type="submit" class="btn btn-primary btn-lg pull-right">
           Login
         </button>
-      
-        <p style="padding-top: 15px"><a ui-sref="app.resetPassword">Forgot your password?</a></p>     
+
+        <p style="padding-top: 15px"><a ui-sref="app.resetPassword">Forgot your password?</a></p>
       </form>
-      
+
+      </div>
     </div>
-    
-    <div class="col-xs-3"></div>
-     
   </div>
 </div>

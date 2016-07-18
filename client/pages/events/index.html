@@ -1,19 +1,19 @@
 
-<div class="container">
-  
-  <div class="page-header">
-    <h1>Past Meetings <small></small></h1>
-  </div>  
-         
-  <div ng-repeat="event in eventVm.events | orderBy:dateTime">
-    <div class="row">
-      <div class="well">
-        <h2>{{event.title}}<br/><small>{{event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</small></h2>
-          <h3>Location: <small>{{event.location}}</small></h3>               
+<div class="container p-t-7">
+  <div class="row">
+  <div class="col-xs-12">
+  <h1 class="page-header p-b-1 m-b-1">Past Meetings</h1>
+  <div class="card" ng-repeat="event in eventVm.events | orderBy:dateTime">
+      <div class="card-header">
+        <h2>{{event.title}}</h2>
+        <small>{{event.dateTime | date : 'MM/dd/yyyy @ h:mm a'}}</small>
+      </div>
+        <div class="card-block">
+          <h3>Location: <small>{{event.location}}</small></h3>
           <h3>Summary</h3>
           <p><span ng-bind-html="event.info"></span></p>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
